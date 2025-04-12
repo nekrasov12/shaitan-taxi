@@ -21,6 +21,20 @@ public class TaxiOrder {
         this.numPeople = numPeople;
     }
 
+    private static final Logger logger = LoggerFactory.getLogger(TaxiOrderService.class);
+
+    public void createOrder(Order order) {
+        logger.info("Створення нового замовлення: {}", order);
+
+        try {
+            // логіка створення замовлення
+        } catch (Exception e) {
+            logger.error("Помилка під час створення замовлення: {}", e.getMessage(), e);
+            throw new OrderCreationException("Не вдалося створити замовлення. Код помилки: ERR-101");
+        }
+    }
+
+
     public Region getStartRegion() {
         return startRegion;
     }

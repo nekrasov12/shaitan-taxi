@@ -37,6 +37,15 @@ public class TaxiOrderController {
     private static final String ORDERS_FILE_PATH = "orders.txt";
     private BufferedWriter writer;
 
+
+
+    public class OrderCreationException extends RuntimeException {
+        public OrderCreationException(String message) {
+            super(message);
+        }
+    }
+
+
     @FXML
     public void initialize() {
         carTypeComboBox.getItems().addAll("Economy", "Comfort", "Business");
